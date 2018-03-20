@@ -1,0 +1,28 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+
+    <persistence-unit name="questionnaire4">
+
+        <!-- Define mapping entities -->
+        <class>by.kozik.quest.entity.PermissionEntity</class>
+        <class>by.kozik.quest.entity.RoleEntity</class>
+        <class>by.kozik.quest.entity.UserEntity</class>
+        <class>by.kozik.quest.entity.QuestEntity</class>
+        <class>by.kozik.quest.entity.QuestionEntity</class>
+        <class>by.kozik.quest.entity.AnswerEntity</class>
+        <class>by.kozik.quest.entity.AnswerMarkEntity</class>
+        <class>by.kozik.quest.entity.AnswerUserTextEntity</class>
+        <class>by.kozik.quest.entity.UserMainResultEntity</class>
+        <class>by.kozik.quest.entity.UserAnswerResultEntity</class>
+        <class>by.kozik.quest.entity.UserAnswerResultTextEntity</class>
+
+        <properties>
+            <!-- Hibernate properties -->
+            <property name="hibernate.format_sql" value="true" />
+        </properties>
+
+    </persistence-unit>
+
+</persistence>

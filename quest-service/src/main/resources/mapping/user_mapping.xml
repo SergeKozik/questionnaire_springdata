@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://dozer.sourceforge.net http://dozer.sourceforge.net/schema/beanmapping.xsd">
+
+    <mapping>
+        <class-a>by.kozik.quest.entity.UserEntity</class-a>
+        <class-b>by.kozik.quest.bean.UserBeanForUserService</class-b>
+
+        <field>
+            <a>email</a>
+            <b>username</b>
+        </field>
+
+        <field custom-converter="by.kozik.quest.service.impl.dozer.RolesToAuthoritiesConverter">
+            <a>roles</a>
+            <b>authorities</b>
+        </field>
+    </mapping>
+    
+    <mapping>
+        <class-a>by.kozik.quest.entity.UserEntity</class-a>
+        <class-b>by.kozik.quest.bean.UserBeanRegister</class-b>
+        
+        <field custom-converter="by.kozik.quest.service.impl.dozer.RolesToRoleNameConverter">
+            <a>roles</a>
+            <b>roleName</b>
+        </field>
+        
+    </mapping>
+
+    <mapping>
+        <class-a>by.kozik.quest.entity.RoleEntity</class-a>
+        <class-b>by.kozik.quest.bean.RoleBeanFromForm</class-b>
+
+        <field custom-converter="by.kozik.quest.service.impl.dozer.PermissionsToNamesConverter">
+            <a>permissions</a>
+            <b>permissionNames</b>
+        </field>
+    </mapping>
+
+    <mapping>
+        <class-a>by.kozik.quest.entity.UserEntity</class-a>
+        <class-b>by.kozik.quest.bean.UserBeanUserList</class-b>
+
+
+        <field>
+            <a>login</a>
+            <b>nick</b>
+        </field>
+
+        <field custom-converter="by.kozik.quest.service.impl.dozer.RolesToRoleNameConverter">
+            <a>roles</a>
+            <b>role</b>
+        </field>
+    </mapping>
+
+</mappings>

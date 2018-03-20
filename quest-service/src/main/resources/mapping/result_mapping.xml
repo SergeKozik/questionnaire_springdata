@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://dozer.sourceforge.net http://dozer.sourceforge.net/schema/beanmapping.xsd">
+
+    <mapping>
+        <class-a>by.kozik.quest.entity.UserMainResultEntity</class-a>
+        <class-b>by.kozik.quest.bean.UserQuestResultBean</class-b>
+
+        <field custom-converter="by.kozik.quest.service.impl.dozer.QuestToIdConverter">
+            <a>quest</a>
+            <b>questId</b>
+        </field>
+
+        <field custom-converter="by.kozik.quest.service.impl.dozer.UserToIdConverter">
+            <a>user</a>
+            <b>userId</b>
+        </field>
+
+        <field>
+            <a>userAnswers</a>
+            <b>answers</b>
+        </field>
+    </mapping>
+
+    <configuration>
+        <custom-converters>
+            <converter type="by.kozik.quest.service.impl.dozer.UserAnswerResultConverter">
+                <class-a>by.kozik.quest.entity.UserAnswerResultEntity</class-a>
+                <class-b>by.kozik.quest.bean.UserAnswerResult</class-b>
+            </converter>
+        </custom-converters>
+    </configuration>
+
+</mappings>

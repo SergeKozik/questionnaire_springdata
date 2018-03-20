@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://dozer.sourceforge.net http://dozer.sourceforge.net/schema/beanmapping.xsd">
+
+    <mapping>
+        <class-a>by.kozik.quest.entity.QuestEntity</class-a>
+        <class-b>by.kozik.quest.bean.QuestCreateFormBean</class-b>
+    </mapping>
+
+    <mapping>
+        <class-a>by.kozik.quest.entity.QuestionEntity</class-a>
+        <class-b>by.kozik.quest.bean.QuestionFormBean</class-b>
+
+        <field custom-converter="by.kozik.quest.service.impl.dozer.AnswersEntityToBeanListConverter">
+            <a>answers</a>
+            <b>answers</b>
+        </field>
+    </mapping>
+
+    <mapping>
+        <class-a>by.kozik.quest.entity.QuestEntity</class-a>
+        <class-b>by.kozik.quest.bean.QuestShowBean</class-b>
+
+        <field custom-converter="by.kozik.quest.service.impl.dozer.DateToStringConverter">
+            <a>creationDate</a>
+            <b>creationDate</b>
+        </field>
+
+        <field>
+            <a>type</a>
+            <b>typeResultNative</b>
+        </field>
+
+        <field custom-converter="by.kozik.quest.service.impl.dozer.ListToSizeConverter">
+            <a>questions</a>
+            <b>numQuestions</b>
+        </field>
+
+        <field custom-converter="by.kozik.quest.service.impl.dozer.ListToSizeConverter">
+            <a>userResults</a>
+            <b>passed</b>
+        </field>
+    </mapping>
+
+</mappings>
